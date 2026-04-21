@@ -1,0 +1,102 @@
+[
+  {
+    "question": "How do I reset my password?",
+    "ground_truth": "Go to Settings > Security > Reset Password. A reset link is emailed within 5 minutes and expires after 60 minutes.",
+    "source_type": "doc"
+  },
+  {
+    "question": "What are the steps to enable two-factor authentication?",
+    "ground_truth": "Go to Settings > Security > Two-Factor Authentication. Choose authenticator app or SMS, scan the QR code, and confirm with a 6-digit code.",
+    "source_type": "doc"
+  },
+  {
+    "question": "How do I invite team members?",
+    "ground_truth": "Go to Settings > Team > Invite Members, enter the email, choose a role (Admin, Editor, Viewer), and click Send Invite. Invitations expire after 7 days.",
+    "source_type": "doc"
+  },
+  {
+    "question": "What file size limits apply to each plan?",
+    "ground_truth": "Free: 10 MB, Pro: 100 MB, Enterprise: 500 MB.",
+    "source_type": "doc"
+  },
+  {
+    "question": "How do I export my account data?",
+    "ground_truth": "Go to Settings > Data > Export, choose a date range and format (CSV or JSON), click Export. A download link is emailed within 30 minutes.",
+    "source_type": "doc"
+  },
+  {
+    "question": "What happens to my data when I cancel?",
+    "ground_truth": "Data is retained for 30 days after cancellation, then permanently deleted. Access continues until the end of the current billing period.",
+    "source_type": "doc"
+  },
+  {
+    "question": "Does the product support GDPR data deletion?",
+    "ground_truth": "Yes. Request deletion via Settings > Privacy > Delete My Data. Requests are processed within 30 days.",
+    "source_type": "doc"
+  },
+  {
+    "question": "How was the password reset email issue resolved for the customer who never received reset emails?",
+    "ground_truth": "The email was blocked by a corporate email filter. The customer was advised to whitelist noreply@example.com and a manual reset link was sent.",
+    "source_type": "ticket"
+  },
+  {
+    "question": "How do I log in if I'm locked out of my 2FA authenticator app?",
+    "ground_truth": "Use a backup code by clicking Use a backup code on the login page below the 2FA prompt.",
+    "source_type": "ticket"
+  },
+  {
+    "question": "Why are team invitations not being received by colleagues?",
+    "ground_truth": "The company email domain may have strict SPF/DKIM filtering. IT should allowlist the sending domain and invitations can then be resent.",
+    "source_type": "ticket"
+  },
+  {
+    "question": "What causes API 429 rate limit errors on the Pro plan?",
+    "ground_truth": "The per-minute rate limit (60 req/min) is being hit rather than the monthly limit. Implement exponential backoff and request queuing with jitter.",
+    "source_type": "ticket"
+  },
+  {
+    "question": "A customer was charged after cancelling. How was it resolved?",
+    "ground_truth": "The charge was for the billing period that ran until the end of the cycle. A 50% goodwill credit was issued as the policy was not clearly communicated.",
+    "source_type": "ticket"
+  },
+  {
+    "question": "How was the SSO failure after a domain name change resolved?",
+    "ground_truth": "The SAML entity ID and ACS URL were updated in Settings > Security > SSO to reflect the new domain. The allowed email domain list was also updated.",
+    "source_type": "ticket"
+  },
+  {
+    "question": "What new features were added in v2.3.0?",
+    "ground_truth": "Bulk team invitations (up to 50 via CSV), API webhook support, and full dark mode.",
+    "source_type": "changelog"
+  },
+  {
+    "question": "What changed about password reset links in v2.3.0?",
+    "ground_truth": "Password reset links now expire after 60 minutes, reduced from 24 hours, for improved security.",
+    "source_type": "changelog"
+  },
+  {
+    "question": "What was added in v2.2.0 for enterprise customers?",
+    "ground_truth": "Granular per-endpoint API rate limits and a data residency selector allowing choice between East US, West Europe, and Southeast Asia.",
+    "source_type": "changelog"
+  },
+  {
+    "question": "When was the Pro plan file upload limit increased to 100 MB?",
+    "ground_truth": "In v2.2.0, released 2025-01-20. The limit was increased from 50 MB to 100 MB.",
+    "source_type": "changelog"
+  },
+  {
+    "question": "What breaking changes were introduced in v2.0.0?",
+    "ground_truth": "API v1 endpoints were deprecated and webhook payload format was updated. v1 webhooks stopped working on 2025-03-01.",
+    "source_type": "changelog"
+  },
+  {
+    "question": "When was SSO first introduced and what protocols does it support?",
+    "ground_truth": "SSO was introduced in v2.0.0 (released 2024-09-01). It supports SAML 2.0 and OIDC for Enterprise customers.",
+    "source_type": "changelog"
+  },
+  {
+    "question": "What improvement was made to audit log retention in v2.1.0?",
+    "ground_truth": "Audit log retention was extended from 30 days to 90 days for Pro plan and 12 months for Enterprise.",
+    "source_type": "changelog"
+  }
+]
