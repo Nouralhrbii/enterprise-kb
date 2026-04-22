@@ -62,7 +62,7 @@ def generate_answer(
     oai_client = client or get_openai_client()
     messages = build_messages(question, chunks)
 
-    response = oai_client.chat.completions.create( # old ??
+    response = oai_client.chat.completions.create( # TODO : Use the modern AzureOpenAI client method once available. 
         model=settings.azure_openai_chat_deployment,
         messages=messages,
         max_tokens=settings.max_tokens_response,

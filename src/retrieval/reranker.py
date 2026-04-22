@@ -19,9 +19,10 @@ This is more expensive than a dedicated cross-encoder (like Cohere
 Rerank) but requires no extra Azure service — only the OpenAI
 deployment you already have.
 
+TODO: In a production system, consider using Azure AI Search's built-in.
 Production alternative: Use Azure AI Search's built-in semantic ranker
 (L2 re-ranking) — faster, cheaper, purpose-built. Enabled by adding
-SemanticConfiguration to the index and passing semantic_query to search().
+SemanticConfiguration to the index and passing semantic_query to search(). 
 
 AI-103 concept: Multi-stage retrieval — fetch wide (rerank_top_n),
 then re-rank to get precise top_k. This is a standard production pattern.
@@ -75,7 +76,8 @@ def rerank(
     means 20 small calls per request. Use a fast, cheap deployment for this
     — gpt-4o-mini is ideal. For this project we reuse the same deployment
     for simplicity.
-    """
+    """ # TODO : Use a cheaper/faster deployment for re-ranking in production, separate from generation
+    
     k = top_k or settings.top_k_results
     if not chunks:
         return []
